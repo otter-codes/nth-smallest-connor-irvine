@@ -2,7 +2,7 @@ object nthTerm extends App {
 
   def assessor(OGList: List[Int], n: Int) : Int = {
     try {
-      val reverseList = OGList.sorted.reverse.distinct
+      val reverseList = OGList.reverse.distinct
       reverseList(n - 1)
 
     } catch {
@@ -10,5 +10,4 @@ object nthTerm extends App {
         throw new IndexOutOfBoundsException("error")
     }
   }
-
 }
