@@ -5,3 +5,4 @@ object BerlinClock extends App {
     if (second%2 == 0) "Y" else "O"
   }
 }
+//BRIEF FOR RED LAMPS DOES'T MAKE SENSE

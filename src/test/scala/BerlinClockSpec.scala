@@ -11,6 +11,7 @@ class BerlinClockSpec extends WordSpec with MustMatchers {
     BerlinClock.seconds(1) mustEqual ("O")
   }
 
+  //BRIEF FOR RED LAMPS DOES'T MAKE SENSE
 
 }
 
