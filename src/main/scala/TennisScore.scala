@@ -6,12 +6,8 @@ object TennisScore {
 
     def scoreBoard(playerHome: TennisPlayer, playerAway: TennisPlayer): (String, String) = {
       (point(playerHome.point) , point(playerAway.point))
-
-
-  //    val tennisMatch = new TennisMatch(homePlayer.scoreHome, awayPlayer.scoreAway)
     }
 }
-
 class TennisMatch(homePlayer: TennisPlayer, awayPlayer: TennisPlayer) {
   def scorePoint(player: TennisPlayer) : (TennisPlayer) = {
 player.copy(point = player.point + 1)

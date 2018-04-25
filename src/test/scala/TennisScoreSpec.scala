@@ -7,6 +7,7 @@ class TennisScoreSpec extends WordSpec with MustMatchers {
     val m = new TennisPlayer("Michael")
     val c = new TennisPlayer("Connor")
     val Tmatch = new TennisMatch(c, m)
+    val ScoredMatch = TennisScore.scoreBoard(TennisPlayer("Connor", 2), TennisPlayer("Michael", 2))
 
     //    "when Connor scores a point the score should read 'fifteen, love' " ignore {
     //      TennisScore.scoreBoard("Connor") mustEqual ("fifteen, love")
@@ -23,16 +24,18 @@ class TennisScoreSpec extends WordSpec with MustMatchers {
     }
 
     "when a player scores a point and the score is '0, 1' the score should read 'Michael, 2' " in {
-
       Tmatch.scorePoint(TennisPlayer("Michael", 1)) mustEqual TennisPlayer("Michael", 2)
     }
     "when a player has no points, '0, 0' the score should read 'love' " in {
-
       TennisScore.scoreBoard(TennisPlayer("Connor"), TennisPlayer("Michael")) mustEqual ("love", "love")
     }
-    "when a player has 1 point, '0, 0' and the player scores again the score should read 'fifteen' " in {
 
+    "when a player has 1 point, '1, 0'  the score should read 'fifteen, love" in {
       TennisScore.scoreBoard(TennisPlayer("Connor", 1), TennisPlayer("Michael")) mustEqual ("fifteen", "love")
+    }
+
+    "when the home player scores a point and the score is 'thirty, thirty' return 'forty, thirty' " in {
+      ScoredMatch(TennisPlayer("Connor", 2), TennisPlayer("Michael", 2)) mustEqual ("forty", "thirty")
     }
   }
 }
